@@ -22,7 +22,8 @@ public class CubesAndSquaresAndPowers {
         
         int pow;
         int num;
-        int ans = 1;
+        //int ans = 1;
+        int ans;
         int choice;
         
         do 
@@ -32,21 +33,44 @@ public class CubesAndSquaresAndPowers {
             System.out.println("3… Find the value of a number, to any power");
             System.out.println("4… Exit");
             choice = scan.nextInt();
-            if (choice == 1)
-            {
-                System.out.println("squared");
-            }
-            else if (choice == 2)
-            {
-                System.out.println("cubed");
-            }
-            else if (choice == 3)
-            {
-                System.out.println("to any power");
-            }
-            else if (choice ==4)
-            {
-                System.out.println("goodbye");
+            //num = 0;
+            //pow = 0;
+            ans = 1;
+            switch (choice) {
+                    case 1:
+                        System.out.println("Please enter the number you want to square");
+                        num = scan.nextInt();
+                        pow = 2;
+                        for (int i = 0; i < pow; i++)
+                        {
+                            ans = ans * num;
+                        }   System.out.println("Your answer is " + ans);
+                        break;
+                    case 2:
+                        System.out.println("Please enter the number you want to cube");
+                        num = scan.nextInt();
+                        pow = 3;
+                        for (int i = 0; i < pow; i++)
+                        {
+                            ans = ans * num;
+                        }   System.out.println("Your answer is " + ans);
+                        break;
+                    case 3:
+                        System.out.println("Please enter the base");
+                        num = scan.nextInt();
+                        System.out.println("Please enter the expoenent");
+                        pow = scan.nextInt();
+                        //System.out.println("to any power");
+                        for (int i = 0; i < pow; i++)
+                        {
+                            ans = ans * num;
+                        }   System.out.println("Your answer is " + ans);
+                        break;
+                    case 4:
+                        System.out.println("goodbye");
+                        break;
+                    default:
+                        break;
             }
         }
         while (choice != 4);
